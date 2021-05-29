@@ -52,6 +52,7 @@ html {
 }
 
 .theme-button {
+  margin-top: 7px;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   width: 1.25rem;
