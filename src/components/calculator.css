@@ -1,0 +1,237 @@
+html {
+  font-family: 'Spartan';
+  font-weight: 700;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100vh;
+  background: var(--main-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  padding: 0;
+  margin: 0;
+  width: 630px;
+}
+
+.theme {
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.title {
+  display: inline;
+  font-size: 2rem;
+  color: var(--text-title);
+}
+
+.theme-selector {
+  margin-left: auto;
+  display: inline;
+  font-size: 1rem;
+  color: var(--text-title);
+  margin-right: 3rem;
+}
+
+.theme-container {
+  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5rem 2.15rem;
+}
+
+.button-container {
+  grid-area: 2 / 1 / span 1 / span 3;
+  background: var(--keypad-bg);
+  border-radius: 1.25rem;
+}
+
+.theme-button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--keypad-bg);
+  border: none;
+  border-radius: 50%;
+}
+
+.active.theme-button {
+  background: var(--key-bg-equals);
+}
+
+.theme-text {
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-title);
+}
+
+.screen {
+  display: flex;
+  justify-content: flex-end;
+  background: var(--screen-bg);
+  padding: 2rem;
+  padding-right: 3em;
+  border-radius: 10px;
+}
+
+.screen-text {
+  font-size: 3.5rem;
+  color: var(--text-title);
+}
+
+.keypad {
+  background: var(--keypad-bg);
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.keys {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+
+.key {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1.6rem;
+}
+
+.key-default {
+  background: var(--key-bg-default);
+  color: var(--text-default);
+  font-size: 2.25rem;
+  box-shadow: 0 7px var(--key-shadow-default);
+}
+
+.key-delete {
+  padding-top: 0.75rem;
+  background: var(--key-bg-delete);
+  color: var(--text-delete);
+  box-shadow: 0 7px var(--key-shadow-delete);
+}
+
+.key-equals {
+  grid-area: 5 / 3 / span 1 / span 2;
+  background: var(--key-bg-equals);
+  color: var(--text-equals);
+  box-shadow: 0 7px var(--key-shadow-equals);
+}
+
+.key-reset {
+  grid-area: 5 / 1 / span 1 / span 2;
+}
+
+.spacer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pressed.key-default {
+  animation: 0.2s pressed-default;
+}
+
+.pressed.key-delete {
+  animation: 0.2s pressed-delete;
+}
+
+.pressed.key-equals {
+  animation: 0.2s pressed-equals;
+}
+
+@keyframes pressed-default {
+  0% {
+    box-shadow: 0 7px var(--key-shadow-default);
+  }
+  50% {
+    box-shadow: 0 2px var(--key-shadow-default);
+    transform: translate(0, 5px);
+  }
+  100% {
+    box-shadow: 0 7px var(--key-shadow-default);
+  }
+}
+
+@keyframes pressed-delete {
+  0% {
+    box-shadow: 0 7px var(--key-shadow-delete);
+  }
+  50% {
+    box-shadow: 0 2px var(--key-shadow-delete);
+    transform: translate(0, 5px);
+  }
+  100% {
+    box-shadow: 0 7px var(--key-shadow-delete);
+  }
+}
+
+@keyframes pressed-equals {
+  0% {
+    box-shadow: 0 7px var(--key-shadow-equals);
+  }
+  50% {
+    box-shadow: 0 2px var(--key-shadow-equals);
+    transform: translate(0, 5px);
+  }
+  100% {
+    box-shadow: 0 7px var(--key-shadow-equals);
+  }
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('../fonts/Spartan-VariableFont_wght.ttf') type('truetype');
+}
+
+@media screen and (max-width: 800px) {
+  .calculator {
+    width: 320px;
+  }
+
+  .keypad {
+    padding: 1.5rem;
+  }
+
+  .keys {
+    column-gap: 0.75rem;
+    row-gap: 1.25rem;
+  }
+
+  .key {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  .key {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.6rem;
+  }
+
+  .key-default {
+    font-size: 1.8rem;
+  }
+
+  .key-delete {
+    padding-top: 0.5rem;
+  }
+
+  .theme-selector {
+    margin-right: 0.5rem;
+  }
+}
